@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobeXchange - Smart Offline Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <h1>GlobeXchange</h1>
+            <p>Smart Offline Currency Converter</p>
+        </div>
+        <button id="darkModeBtn" class="theme-btn" type="button">☀ Dark Mode</button>
+    </header>
+ 
+    <main class="container">
+        <section class="converter-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Currency Converter</h2>
+                    <p>Works completely offline using predefined USD-based rates.</p>
+                </div>
+                <span class="offline-badge">● OFFLINE</span>
+            </div>
+ 
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" min="0" step="any">
+ 
+            <div class="currency-row">
+                <div class="field">
+                    <label for="fromCurrency">From</label>
+                    <select id="fromCurrency"></select>
+                </div>
+ 
+                <button id="swapBtn" class="swap-btn" type="button" title="Swap currencies">⇄</button>
+ 
+                <div class="field">
+                    <label for="toCurrency">To</label>
+                    <select id="toCurrency"></select>
+                </div>
+            </div>
+ 
+            <button id="convertBtn" class="primary-btn" type="button">Convert</button>
+ 
+            <div id="result" class="result" aria-live="polite">
+                Enter an amount and click Convert.
+            </div>
+ 
+            <p id="rateInfo" class="rate-info"></p>
+        </section>
+ 
+        <section class="history-card">
+            <div class="section-heading">
+                <h2>Recent Conversions</h2>
+                <button id="clearHistoryBtn" class="text-btn" type="button">Clear</button>
+            </div>
+            <div id="historyList" class="history-list">
+                <p class="empty">No conversions yet.</p>
+            </div>
+        </section>
+ 
+        <section class="rates-card">
+            <div class="section-heading">
+                 <h2>Supported Currencies</h2>
+                 <span>Base: USD</span>
+            </div>
+            <div class="table-wrapper">
+                 <table>
+                     <thead>
+                          <tr>
+                               <th>Code</th>
+                               <th>Currency</th>
+                               <th>Rate (USD = 1)</th>
+                          </tr>
+                     </thead>
+                     <tbody id="ratesTableBody"></tbody>
+                 </table>
+            </div>
+            <p class="note">
+                 These are static illustrative rates for the offline academic implementation.
+                 They are not live market rates.
+            </p>
+        </section>
+    </main>
+ 
+    <footer>
+        <p>GlobeXchange &copy; 2026 | Offline Academic Project</p>
+    </footer>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
